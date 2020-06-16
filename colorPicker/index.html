@@ -1,0 +1,70 @@
+<html> 
+    <head> 
+        <title>Color Picker</title>
+        <style>
+        #menu , #submenu{
+
+            border : 2px solid black;
+            color : white;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: black;
+            width: 10%;
+
+        }
+
+        #submenu{
+            padding-left: 1cm;
+        }
+        </style>
+        <script src="jquery-3.4.1.js"></script>
+        <script>
+                var colorList = ["red","blue","green","orange","sky","grey"];
+                var i=0;
+                $(document).ready(
+                    function(){
+                       $("h2").mouseenter(
+                            function(){
+                                $(this).css("color",colorList[i]);
+                                i++;
+                                if(i==6)
+                                    i=0;
+                            }
+                        );
+        
+                        $("#menu").click(
+                            function(){
+                                $("#submenu").slideDown("slow");
+                            }
+                        );
+                    }
+                )
+
+                function alertc(){
+                    alert("hellloo");
+                }
+
+                function alertm(){
+                    alert("Adulting...");
+                }
+                
+                </script>
+    </head>
+
+    <body>
+ 
+            
+        <div id="menu">-MENU</div>
+        <div id="submenu">-item1<br>-item2<br>-item3</div>
+        <h2>I am H2 Heading..</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+        <input type="text">
+        <button onclick="alertc()">Send</button>
+        <br><br>
+        <button>OK</button>
+
+    </body>
+</html>
